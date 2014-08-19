@@ -1,0 +1,469 @@
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  *font-size: 100%;
+}
+
+legend {
+  color: #000;
+}
+
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearbox:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+input, textarea, button, a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+  -webkit-text-size-adjust: none;
+}
+
+/* link */
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: #5491db;
+}
+
+a.gray9:link, a.gray9:visited, a.gray9:active {
+  text-decoration: none;
+  color: #999;
+}
+
+/* layout */
+html, body {
+  height: 100%;
+}
+
+html {
+  font-size: 10px;
+  line-height: 10px;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  color: #999;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.txt_c {
+  text-align: center;
+}
+
+.txt_r {
+  text-align: right;
+}
+
+.small {
+  font-size: 1.2rem;
+}
+
+.fl {
+  float: left;
+}
+
+.blueBlock {
+  background: #5491DB;
+  padding: 2px 5px;
+  color: #FFF;
+  border-radius: 2px;
+}
+
+.blue {
+  color: #5491db;
+}
+
+.hide {
+  display: none;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.icon-definition {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -56px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-extension {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -140px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-example {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -168px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-definitionActive {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -84px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-extensionActive {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -112px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-exampleActive {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -196px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-a-b {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -28px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-play {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 0;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+#wrapper {
+  padding-bottom: 37px;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.wordDetail-box {
+  background: #f9f9f9;
+  padding: 15px;
+}
+
+#word-definition {
+  color: #666;
+}
+#word-definition .audioPlayer {
+  position: absolute;
+  right: 0;
+  width: 27px;
+  top: -2px;
+  height: 41px;
+  padding: 0 9px 0 10px;
+  display: block;
+  line-height: 38px;
+}
+#word-definition .item-title {
+  color: #68bf4a;
+}
+#word-definition .item-pronounce {
+  width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
+  position: relative;
+  padding-right: 39px;
+}
+#word-definition .icon-pause {
+  background: url(/services/client_v2/iOS/images/icon-pause.gif) center no-repeat;
+  background-size: 16px;
+}
+
+#word-extension, #word-example, #word-definition {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+#navBar {
+  background: #eaeaea;
+  position: fixed;
+  bottom: 0;
+  height: 37px;
+  line-height: 37px;
+  width: 100%;
+  display: none;
+}
+#navBar li {
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  text-align: center;
+  display: none;
+}
+#navBar li.active {
+  color: #404040;
+}
+#navBar li i {
+  vertical-align: -9px;
+}
+#navBar #navMark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 33.33%;
+  background: #75a6e1;
+}
+
+.word-item .item-title {
+  height: 39px;
+  line-height: 39px;
+  border-bottom: 1px solid #d5d5d5;
+  position: relative;
+  color: #404040;
+}
+.word-item .item-title:after {
+  content: ' ';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 17px;
+  border: #BCBCBC solid;
+  border-width: 1px 1px 0 0;
+  -webkit-transform: rotate(-45deg);
+  right: 11px;
+}
+.word-item.closed .item-title:after {
+  top: 14px;
+  -webkit-transform: rotate(135deg);
+}
+.word-item .item-con {
+  padding: 10px 0 20px 0;
+}
+.word-item .typeCode {
+  background: #F5F5F5;
+  padding: 2px 7px;
+  color: #404040;
+  margin-top: 10px;
+}
+
+.sentence-list li {
+  border-bottom: 1px solid #d5d5d5;
+  padding: 15px 0;
+  position: relative;
+}
+.sentence-list li:last-child {
+  border: 0;
+}
+.sentence-list .sentence-num {
+  float: left;
+  color: #404040;
+}
+.sentence-list .sentence-con {
+  padding: 0 27px 0 4px;
+  overflow: hidden;
+  word-break: break-word;
+}
+.sentence-list .audioPlayer {
+  position: absolute;
+  right: -13px;
+  top: 7px;
+  height: 44px;
+  width: 44px;
+  text-align: center;
+  display: block;
+  line-height: 38px;
+}
+.sentence-list .icon-pause {
+  background: url(/services/client_v2/iOS/images/icon-pause.gif) center no-repeat;
+  background-size: 16px;
+}
+
+.icon-loading {
+  background: url(/services/client_v2/iOS/images/loding.gif) center no-repeat;
+  background-size: 16px;
+}
+
+.sub-list {
+  margin-left: 14px;
+}
+.sub-list li:first-child {
+  padding: 5px 0 15px 0;
+}
+.sub-list li:first-child .audioPlayer {
+  top: -1px;
+}
+
+.sub-list li {
+  border-bottom: 1px dashed #E3E3E3;
+}
+
+.loading-box {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.loading-box img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.word {
+  color: #68C04A;
+  font-style: italic;
+}

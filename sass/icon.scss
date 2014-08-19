@@ -1,0 +1,67 @@
+@import "compass/css3/background-size";
+
+// Retina Sprite Mixins
+@mixin retina-sprite-background($name,$normal,$retina){
+  background-repeat: no-repeat;
+  background-image: sprite-url($normal);
+  background-position:0 round(nth(sprite-position($normal, $name), 2) / 2);
+  height:round(image-height(sprite-file($normal, $name))/2);
+  width: round(image-width(sprite-file($normal, $name))/2);
+  $double-width:ceil(image-width(sprite-path($normal)) / 2);
+  $auto-height:auto;
+  @include background-size($double-width $auto-height);
+
+  // Media Query for retina
+  // @media (min--moz-device-pixel-ratio: 1.3),
+  //        (-o-min-device-pixel-ratio: 2.6/2),
+  //        (-webkit-min-device-pixel-ratio: 1.3),
+  //        (min-device-pixel-ratio: 1.3),
+  //        (min-resolution: 1.3dppx) {
+
+  //         background-image: sprite-url($retina);
+  //         background-position: 0 round(nth(sprite-position($retina, $name), 2) / 2);
+  //         height:round(image-height(sprite-file($retina, $name)) / 2);
+  //         width: round(image-width(sprite-file($retina, $name)) /2 );
+
+  //         // treat the @2x retina sprite sheet as 50% wide for double resolution upon display
+  //         $double-width:ceil(image-width(sprite-path($retina)) / 2);
+  //         $auto-height:auto;
+  //         @include background-size($double-width $auto-height);
+  //        }
+}
+
+$food-icon-normal: sprite-map("icon/*.png");
+$food-icon-retina: sprite-map("icon/*.png");
+
+[class^="icon-"],
+[class*=" icon-"]{
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.icon-definition{
+  @include retina-sprite-background(definition,$food-icon-normal,$food-icon-retina);
+}
+.icon-extension{
+  @include retina-sprite-background(extension,$food-icon-normal,$food-icon-retina);
+}
+.icon-example{
+  @include retina-sprite-background(example,$food-icon-normal,$food-icon-retina);
+}
+.icon-definitionActive{
+  @include retina-sprite-background(definitionActive,$food-icon-normal,$food-icon-retina);
+}
+.icon-extensionActive{
+  @include retina-sprite-background(extensionActive,$food-icon-normal,$food-icon-retina);
+}
+.icon-exampleActive{
+  @include retina-sprite-background(exampleActive,$food-icon-normal,$food-icon-retina);
+}
+.icon-a-b{
+  @include retina-sprite-background(a-b,$food-icon-normal,$food-icon-retina);
+}
+.icon-play{
+  @include retina-sprite-background(play,$food-icon-normal,$food-icon-retina);
+}

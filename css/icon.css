@@ -1,0 +1,103 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.icon-definition {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -56px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-extension {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -140px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-example {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -168px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-definitionActive {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -84px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-extensionActive {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -112px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-exampleActive {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -196px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-a-b {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 -28px;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}
+
+.icon-play {
+  background-repeat: no-repeat;
+  background-image: url('/services/client_v2/iOS/images/icon-s607332e2cf.png');
+  background-position: 0 0;
+  height: 28px;
+  width: 28px;
+  -webkit-background-size: 28px auto;
+  -moz-background-size: 28px auto;
+  -o-background-size: 28px auto;
+  background-size: 28px auto;
+}

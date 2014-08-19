@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>沪江小D-沪江网</title>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="keywords" content="沪江小D APP" />
+    <meta name="description" content="沪江小D APP" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" type="text/css" href="/services/client_v2/iOS/css/mdict.css" />
+    <script src="/services/client_v2/iOS/js/zepto.min.js"></script>
+    <script src="/services/client_v2/iOS/js/dot.js"></script>
+    <script src="/services/client_v2/iOS/js/dict_m.js?v=32"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <img src="/services/client_v2/iOS/images/icon-pause.gif" style="display:none;"> 
+        <div class="wordDetail-box"></div>
+    </div>
+
+    <script id="definition-tmpl" type="text/template">
+        <div id="word-definition">
+        {{ for (var i = 0; i < it.SimpleCommentList.length; i++) { 
+            var pronounceList = it.SimpleCommentList[i].PronounceList;
+            if(pronounceList && it.SimpleCommentList.length !==1){
+        }}
+            <div class="word-item closed">
+                <div class="item-title">
+                    <div class="item-pronounce">
+                    {{=it.word }}
+                    {{ for (var j = 0; j < pronounceList.length; j++) { }}
+                        {{= Mdict.Common.formartWord(pronounceList[j].pronounce) }}
+                        {{ if(pronounceList[j].audio){ }}
+                        <div class="audioPlayer"><i class="icon-play"></i><audio data-src="{{=pronounceList[j].audio }}" ontimeupdate = "Mdict.AudioPlayer.getProgress($(this))"></audio></div>
+                        {{ }
+                    }  }}
+                    </div>
+                </div>
+                <div class="item-con hide">
+                    {{= Mdict.Common.formartWord(it.SimpleCommentList[i].Desc) }}
+                </div>
+            </div>
+            {{ }else{ }}
+             {{= Mdict.Common.formartWord(it.SimpleCommentList[i].Desc) }}
+            {{ } }}
+        {{ } }}
+        </div>
+    </script>
+    
+    <script id="collins-tmpl" type="text/template">
+        {{if(it){ }}
+            {{if(!it.isSame){ }}<p>{{=Mdict.Common.formartWord(it.content) }}</p>{{ } }}
+        {{ } }}
+    </script>
+    
+    <script id="extension-tmpl" type="text/template">
+        <div id="word-extension">
+        {{ if(it.FormStateList.length){ }}
+            <div class="word-item">
+                <div class="item-title">词形变化</div>
+                <div class="item-con">
+                {{ for (var i = 0; i < it.FormStateList.length; i++) { }}<a href='hjdict://searchword?word={{=encodeURIComponent(it.FormStateList[i].Word) }}'>{{=it.FormStateList[i].Word }}</a>{{if(i < it.FormStateList.length -1){ }}<span class="blue">，</span>{{ } }}
+                {{ } }}
+                </div>
+            </div>
+        {{ } }}
+
+        {{ if(it.DetailCommentList.length){ }}
+            <div class="word-item">
+                <div class="item-title">详细释义</div>
+                <div class="item-con">
+                {{ for (var i = 0; i < it.DetailCommentList.length; i++) { }}
+                    <div class="typeCode">{{= it.DetailCommentList[i].TypeCode}}</div>
+                    {{ for (var j = 0; j < it.DetailCommentList[i].CommonCommentList.length; j++) { }}
+                        <div class="mt10" style="color: #404040;">
+                            <div class="fl">{{=j + 1 + ". " }}</div>
+                            <div style="padding-left:18px;">{{= it.DetailCommentList[i].CommonCommentList[j].Desc}}</div>
+                        </div>
+                        <ul class="sentence-list sub-list">
+                            {{ for (var z = 0; z < it.DetailCommentList[i].CommonCommentList[j].SentenceList.length; z++) { }}
+                                <li>
+                                    <div class="sentence-con">
+                                    <p style="color: #404040;">{{=it.DetailCommentList[i].CommonCommentList[j].SentenceList[z].Origin }}</p>
+                                    <p class="mt5">{{=it.DetailCommentList[i].CommonCommentList[j].SentenceList[z].Translate }}</p>
+                                    </div>
+                                    <div class="audioPlayer"><i class="icon-play"></i><audio data-src="{{=it.DetailCommentList[i].CommonCommentList[j].SentenceList[z].Url }}" ontimeupdate = "Mdict.AudioPlayer.getProgress($(this))"></audio></div>
+                                </li>
+                            {{ } }}
+                        </ul>
+                    {{ } }}
+                {{ } }}
+                </div>
+            </div>
+        {{ } }}
+
+        {{ if(it.EESentenceComment){ }}
+             <div class="word-item">
+                <div class="item-title">英英释义</div>
+                <div class="item-con">
+                {{ for (var i = 0; i < it.EESentenceComment.length; i++) { }}
+                    <div class="typeCode">{{= it.EESentenceComment[i].Type}}解释</div>
+                    {{ for (var j = 0; j < it.EESentenceComment[i].EESentences.length; j++) { }}
+                        <div class="mt10" style="color: #404040;">
+                            <div class="fl">{{=j + 1 + ". " }}</div>
+                            <div style="padding-left:18px;">{{= it.EESentenceComment[i].EESentences[j].Sentence}}</div>
+                        </div>
+                        <ul class="sentence-list sub-list">
+                            {{ for (var z = 0; z < it.EESentenceComment[i].EESentences[j].SentenceList.length; z++) { }}
+                                <li>
+                                    <div class="sentence-con">
+                                    <p style="color: #999;">{{=it.EESentenceComment[i].EESentences[j].SentenceList[z] }}</p>
+                                    </div>
+                                </li>
+                            {{ } }}
+                        </ul>
+                    {{ } }}
+                {{ } }}
+                </div>
+            </div>
+        {{ } }}
+
+        {{ if(it.SynAntList.length){ }}
+            <div class="word-item">
+                <div class="item-title">同反义词</div>
+                <div class="item-con">
+                {{ for (var i = 0; i < it.SynAntList.length; i++) { 
+                    if(it.SynAntList[i].Type == 10 && it.SynAntList[i].Word !==""){ }}
+                        <p>同:</p>
+                    {{ }else if(it.SynAntList[i].Type == 11 && it.SynAntList[i].Word !==""){ }}
+                        <p class="mt10">反:</p>
+                    {{ } }}
+                    {{  var array = it.SynAntList[i].Word.split(",");
+                        for (var j = 0; j < array.length; j++) {  }}
+                        <a href='hjdict://searchword?word={{=encodeURIComponent(array[j]) }}'>{{=array[j] }}</a>{{if(j < array.length -1){ }}<span class="blue">，</span>{{ } }}
+                    {{ }
+                } }}
+                </div>
+            </div>
+        {{ } }}
+
+        {{ if(it.PhraseList.length){ }}
+            <div class="word-item">
+                <div class="item-title">常用短语</div>
+                <div class="item-con">
+                {{ for (var i = 0; i < it.PhraseList.length; i++) { }}
+                    <p><span style="color: #404040;">{{=(i+1)+". " }}</span><a href='hjdict://searchword?word={{=encodeURIComponent(it.PhraseList[i].Phrase) }}'>{{=it.PhraseList[i].Phrase }}</a></p>
+                    <p class="mb10" style="margin-left: 18px;">{{=it.PhraseList[i].Comment }}</p>
+                {{ } }}
+                </div>
+            </div>
+        {{ } }}
+
+        {{ if(it.AnalyzeList.length){ }}
+            <div class="word-item">
+                <div class="item-title">词义辨析</div>
+                <div class="item-con">
+                {{ for (var i = 0; i < it.AnalyzeList.length; i++) { }}
+                    <p class="mb10" style="word-break: break-word;">{{=it.AnalyzeList[i].Words }}</p>
+                    <p>{{=Mdict.Common.formartCY(it.AnalyzeList[i].Comment,it.AnalyzeList[i].Words.split(",")) }}</p>
+                {{ } }}
+                </div>
+            </div>
+        {{ } }}
+        </div>
+    </script>
+
+    <script id="example-tmpl" type="text/template">
+        <div id="word-example">
+            <ul class="sentence-list">
+            {{ for (var i = 0; i < it.SentenceList.length; i++) { }}
+                <li>
+                    <div class="sentence-num"> {{=i + 1 + "." }}</div>
+                    <div class="sentence-con">
+                    <p style="color: #404040;">{{=it.SentenceList[i].Origin }}</p>
+                    <p class="mt5" style="color:#a3a3a3;">{{=it.SentenceList[i].Translate }}</p>
+                    </div>
+                    <div class="audioPlayer"><i class="icon-play"></i><audio id={{=i + 1 }} data-src="{{=it.SentenceList[i].Url }}" ontimeupdate = "Mdict.AudioPlayer.getProgress($(this))"></audio></div>
+                </li>
+            {{ } }}
+            </ul>
+        </div>
+    </script>
+
+    <script id="article-tmpl" type="text/template">
+        <li>
+            <div class="sentence-num"> {{=$("#word-example .sentence-list li").length + 1 + "." }}</div>
+            <div class="sentence-con">
+                <a href="hjdict://web?url={{=it.Link}}">{{=it.Sentence }}</a>
+                <p class="mt10 small">来源：{{=it.SiteName }}</p>
+            </div>
+        </li>
+    </script>
+
+    <script id="wordRecommend-tmpl" type="text/template">
+        <p class="txt_c" style="border-bottom: 1px solid #D1D1D1; padding: 10px 0; margin-bottom: 15px; ">没有查询到单词</p>
+        <div style="line-height: 30px;">你是否要找:
+            <ul>
+                {{ for (var i = 0; i < it.length; i++) { }}
+                    <li><a href='hjdict://searchword?word={{=encodeURIComponent(it[i]) }}'>{{=it[i] }}</a></li>
+                {{ } }}
+            </ul>
+        </div>
+    </script>
+
+	<nav id="navBar" class="clearbox">
+		<ul>
+			<li class = "definition active" data-nav = "definition"><i class="icon-definition icon-definitionActive"></i>释义</li>
+			<li class = "extension" data-nav = "extension"><i class="icon-extension"></i>扩展</li>
+			<li class = "example" data-nav = "example"><i class="icon-example"></i>例句</li>
+		</ul>
+        <div id="navMark"></div>
+	</nav>
+    <script>
+    $(function(){
+        Mdict.WordInfo.render();
+    })
+    </script>
+</body>
+</html>

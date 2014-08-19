@@ -1,0 +1,30 @@
+$blue: #5491db;
+
+.clear {clear: both; height: 0; overflow: hidden; }
+.clearbox:after {content: ""; clear: both; display: block; visibility: hidden; height: 0; }
+input, textarea, button, a{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
+
+/* link */
+a:link,a:visited,a:active{text-decoration: none; color: #5491db; }
+a.gray9:link,a.gray9:visited,a.gray9:active{text-decoration: none; color: #999; } 
+
+/* layout */
+html, body {height: 100%; }
+html{font-size:10px; line-height: 10px;-webkit-text-size-adjust: none; }
+body{color: #999; font-size: 1.4rem;line-height: 1.5rem;font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;}
+
+.mt10{margin-top: 10px;}
+.mt20{margin-top: 20px;}
+.mt5{margin-top: 5px;}
+.mr5{margin-right: 5px;}
+.mr10{margin-right: 10px;}
+.mb10{margin-bottom: 10px;}
+.mb20{margin-bottom: 20px;}
+.txt_c{text-align: center;}
+.txt_r{text-align: right;}
+.small{font-size: 1.2rem;}
+.fl{float:left;}
+.blueBlock{background: #5491DB; padding: 2px 5px; color: #FFF; border-radius: 2px;}
+.blue{color:#5491db;}
+.hide{display:none;}
